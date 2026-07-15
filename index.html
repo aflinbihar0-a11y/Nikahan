@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Romeo & Juliet</title>
+    <!-- Menggunakan Tailwind CSS untuk desain cepat & modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts untuk font tulisan estetis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        .font-aesthetic { font-family: 'Great Vibes', cursive; }
+        .font-utama { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="font-utama bg-stone-100 overflow-hidden" id="body-konten">
+
+    <!-- FILE AUDIO / MUSIK BACKGROUND -->
+    <audio id="bg-musik" loop>
+        <source src="musik.mp3" type="audio/mp3">
+        Browser kamu tidak mendukung pemutar audio.
+    </audio>
+
+    <!-- HALAMAN COVER UTAMA (FULL SCREEN) -->
+    <div id="halaman-cover" class="fixed inset-0 z-50 flex flex-col items-center justify-center text-center bg-cover bg-center transition-all duration-1000 ease-in-out" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('bg.jpg');">
+        
+        <div class="text-white px-4">
+            <p class="text-sm tracking-widest uppercase mb-3 text-stone-300">The Wedding of</p>
+            <h1 class="font-aesthetic text-6xl md:text-8xl my-4 text-amber-200">Romeo & Juliet</h1>
+            <p class="text-base font-light italic text-stone-300 mb-8">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            
+            <!-- Tombol Buka Undangan -->
+            <button onclick="bukaUndangan()" class="bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out tracking-wide">
+                ✉ Buka Undangan
+            </button>
+        </div>
+
+    </div>
+
+    <!-- ISI UTAMA UNDANGAN (AKAN MUNCUL SETELAH TOMBOL DIKLIK) -->
+    <main class="min-h-screen py-16 px-4 max-w-md mx-auto flex flex-col items-center justify-center text-center">
+    
+    <!-- Ucapan Pembuka / Ayat -->
+    <div class="mb-12">
+        <p class="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-3">Selamat Datang</p>
+        <h2 class="font-aesthetic text-4xl text-stone-800 mb-4">Assalamu'alaikum Wr. Wb.</h2>
+        <p class="text-stone-600 text-xs leading-relaxed italic px-2">
+            "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."
+        </p>
+    </div>
+
+    <!-- PROFIL MEMPELAI WANITA -->
+    <div class="flex flex-col items-center mb-10 w-full">
+        <!-- Bingkai Foto Wanita -->
+        <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-200 shadow-md mb-4 bg-stone-300 flex items-center justify-center">
+            <!-- Ganti 'wanita.jpg' dengan foto mempelai wanita nanti -->
+            <img src="wanita.jpg" alt="Foto Wanita" class="w-full h-full object-cover onerror="this.src='https://placehold.co/150x150?text=Foto+Wanita'">
+        </div>
+        <h3 class="font-aesthetic text-3xl text-amber-800 font-medium">Juliet Capulet</h3>
+        <p class="text-xs text-stone-500 font-semibold mt-1">Putri dari Pasangan</p>
+        <p class="text-sm text-stone-700">Bapak Capulet & Ibu Capulet</p>
+    </div>
+
+    <!-- Simbol Dan (&) -->
+    <div class="font-aesthetic text-4xl text-amber-600 my-4">&</div>
+
+    <!-- PROFIL MEMPELAI PRIA -->
+    <div class="flex flex-col items-center mb-6 w-full">
+        <!-- Bingkai Foto Pria -->
+        <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-200 shadow-md mb-4 bg-stone-300 flex items-center justify-center">
+            <!-- Ganti 'pria.jpg' dengan foto mempelai pria nanti -->
+            <img src="pria.jpg" alt="Foto Pria" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x150?text=Foto+Pria'">
+        </div>
+        <h3 class="font-aesthetic text-3xl text-amber-800 font-medium">Romeo Montague</h3>
+        <p class="text-xs text-stone-500 font-semibold mt-1">Putra dari Pasangan</p>
+        <p class="text-sm text-stone-700">Bapak Montague & Ibu Montague</p>
+    </div>
+
+    </main>
+
+    <!-- SECTION DETAIL ACARA -->
+<section class="bg-stone-50 py-16 px-4 w-full">
+    <div class="max-w-md mx-auto text-center">
+        
+        <p class="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-2">Informasi Acara</p>
+        <h2 class="font-aesthetic text-4xl text-stone-800 mb-10">Pelaksanaan Acara</h2>
+
+        <!-- KARTU AKAD NIKAH -->
+        <div class="bg-white rounded-2xl shadow-sm p-6 mb-6 border border-stone-200 transform transition duration-300 hover:shadow-md">
+            <div class="text-amber-600 text-2xl mb-2">💍</div>
+            <h3 class="font-aesthetic text-3xl text-stone-800 mb-3">Akad Nikah</h3>
+            
+            <hr class="w-16 mx-auto border-amber-200 mb-4">
+            
+            <p class="text-sm font-semibold text-stone-700">Sabtu, 12 Desember 2026</p>
+            <p class="text-xs text-stone-500 mt-1">Pukul 08.00 - 10.00 WIB</p>
+            
+            <p class="text-xs text-stone-600 mt-4 font-medium">Lokasi Utama:</p>
+            <p class="text-xs text-stone-500 max-w-xs mx-auto mt-1">
+                Masjid Agung Kota Indah, Jl. Melati No. 45, Kecamatan Asri, Kota Bahagia
+            </p>
+        </div>
+
+        <!-- KARTU RESEPSI NIKAH -->
+        <div class="bg-white rounded-2xl shadow-sm p-6 mb-10 border border-stone-200 transform transition duration-300 hover:shadow-md">
+            <div class="text-amber-600 text-2xl mb-2">🥂</div>
+            <h3 class="font-aesthetic text-3xl text-stone-800 mb-3">Resepsi</h3>
+            
+            <hr class="w-16 mx-auto border-amber-200 mb-4">
+            
+            <p class="text-sm font-semibold text-stone-700">Sabtu, 12 Desember 2026</p>
+            <p class="text-xs text-stone-500 mt-1">Pukul 11.00 - Selesai</p>
+            
+            <p class="text-xs text-stone-600 mt-4 font-medium">Lokasi Utama:</p>
+            <p class="text-xs text-stone-500 max-w-xs mx-auto mt-1">
+                Gedung Serbaguna Kencana, Jl. Mawar No. 12, Kota Bahagia
+            </p>
+        </div>
+
+        <!-- TOMBOL GOOGLE MAPS -->
+        <a href="https://maps.google.com" target="_blank" class="inline-flex items-center bg-stone-800 hover:bg-stone-900 text-white font-medium text-sm py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out tracking-wide">
+            📍 Buka Peta Lokasi (Google Maps)
+        </a>
+
+    </div>
+</section>
+
+    <!-- SECTION RSVP & UCAPAN DIGITAL -->
+<section class="bg-stone-100 py-16 px-4 w-full border-t border-stone-200">
+    <div class="max-w-md mx-auto text-center">
+        
+        <p class="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-2">Konfirmasi Kehadiran</p>
+        <h2 class="font-aesthetic text-4xl text-stone-800 mb-6">RSVP & Ucapan</h2>
+        <p class="text-stone-600 text-xs leading-relaxed max-w-xs mx-auto mb-8">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
+        </p>
+
+        <!-- KARTU EMBED GOOGLE FORM -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc_qIb11T6FZm7BWTDve4SZsgH6a9d-TgPj60Qh20xETyUefA/viewform?embedded=true" width="640" height="762" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>
+
+        <!-- FOOTER UNDANGAN -->
+        <div class="mt-16 text-stone-500 text-xs tracking-wider">
+            <p class="font-light">Terima Kasih Atas Doa & Restu Anda</p>
+            <h4 class="font-aesthetic text-2xl text-amber-800 mt-2">Romeo & Juliet</h4>
+            <div class="mt-8 border-t border-stone-300 pt-4 text-[10px] text-stone-400">
+                Created with ♥ by Namabrandmu
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- JAVASCRIPT LOGIK UNTUK MUSIK & ANIMASI COVER -->
+    <script>
+        function bukaUndangan() {
+            // 1. Putar Musik Latar Belakang
+            const musik = document.getElementById('bg-musik');
+            musik.play().catch(error => {
+                console.log("Autoplay musik diblokir oleh browser, butuh interaksi fisik tambahan.");
+            });
+
+            // 2. Efek Transisi Menghilangkan Cover (Geser ke atas)
+            const cover = document.getElementById('halaman-cover');
+            cover.classList.add('-translate-y-full', 'opacity-0');
+            
+            // 3. Mengembalikan scrollbar halaman utama setelah cover hilang
+            setTimeout(() => {
+                document.getElementById('body-konten').classList.remove('overflow-hidden');
+                cover.style.display = 'none'; // Menghapus elemen cover sepenuhnya dari layar
+            }, 1000); // 1000ms = 1 detik sesuai durasi animasi transition CSS
+        }
+    </script>
+</body>
+</html>
