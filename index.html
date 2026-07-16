@@ -129,27 +129,100 @@
 </section>
 
     <!-- SECTION RSVP & UCAPAN DIGITAL -->
-<section class="bg-stone-100 py-16 px-4 w-full border-t border-stone-200">
-    <div class="max-w-md mx-auto text-center">
-        
-        <p class="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-2">Konfirmasi Kehadiran</p>
-        <h2 class="font-aesthetic text-4xl text-stone-800 mb-6">RSVP & Ucapan</h2>
-        <p class="text-stone-600 text-xs leading-relaxed max-w-xs mx-auto mb-8">
-            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
-        </p>
+    <section class="bg-stone-100 py-16 px-4 w-full border-t border-stone-200">
+        <div class="max-w-md mx-auto text-center">
+            
+            <p class="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-2">Konfirmasi Kehadiran</p>
+            <h2 class="font-aesthetic text-4xl text-stone-800 mb-6">RSVP & Ucapan</h2>
+            <p class="text-stone-600 text-xs leading-relaxed max-w-xs mx-auto mb-8">
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
+            </p>
 
-        <!-- KARTU EMBED GOOGLE FORM -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScCl-6tuuz-ZOUEXl0vaUtvrGCqq4RSBp5a4F9jsmOaU08WQg/viewform?embedded=true" width="640" height="762" frameborder="0" marginheight="0" marginwidth="0">Memuat…</iframe>        <!-- FOOTER UNDANGAN -->
-        <div class="mt-16 text-stone-500 text-xs tracking-wider">
-            <p class="font-light">Terima Kasih Atas Doa & Restu Anda</p>
-            <h4 class="font-aesthetic text-2xl text-amber-800 mt-2">Romeo & Juliet</h4>
-            <div class="mt-8 border-t border-stone-300 pt-4 text-[10px] text-stone-400">
-                Created with ♥ by Namabrandmu
+            <!-- FORM KEHADIRAN KUSTOM (NON-GFORM) -->
+            <div class="bg-white rounded-2xl shadow-md p-6 border border-stone-200 w-full max-w-md mx-auto text-left">
+              
+              <h3 class="text-center font-aesthetic text-3xl text-amber-800 font-medium mb-6">Kehadiran</h3>
+
+              <!-- FORM DENGAN ENDPOINT FORMSPREE KAMU -->
+              <form action="https://formspree.io/f/mykrknjo" method="POST" class="space-y-4 text-stone-700">
+                
+                <!-- Input Nama -->
+                <div>
+                  <label class="block text-xs font-semibold mb-1 text-stone-600">Nama</label>
+                  <input type="text" name="Nama" required placeholder="Contoh: Bapak Budi" 
+                         class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-amber-600 text-sm">
+                </div>
+
+                <!-- Input Ucapan -->
+                <div>
+                  <label class="block text-xs font-semibold mb-1 text-stone-600">Ucapan</label>
+                  <textarea name="Ucapan" rows="4" required placeholder="Tulis ucapan & doa restu di sini..." 
+                            class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-amber-600 text-sm resize-none"></textarea>
+                </div>
+
+                <!-- Pilihan Kehadiran -->
+                <div>
+                  <label class="block text-xs font-semibold mb-1 text-stone-600">Kehadiran</label>
+                  <select name="Kehadiran" required 
+                          class="w-full px-3 py-2 border border-stone-300 rounded-md bg-white focus:outline-none focus:border-amber-600 text-sm">
+                    <option value="" disabled selected>Pilih Kehadiran</option>
+                    <option value="Ya, Saya Akan Hadir">Ya, Saya Akan Hadir</option>
+                    <option value="Maaf, Saya Tidak Dapat Hadir">Maaf, Saya Tidak Dapat Hadir</option>
+                  </select>
+                </div>
+
+                <!-- Datang Sama Siapa -->
+                <div>
+                  <label class="block text-xs font-semibold mb-1 text-stone-600">Dateng Sama Siapa?</label>
+                  <input type="text" name="Teman_Kondangan" placeholder="Contoh: Istri / Teman Kantor" 
+                         class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-amber-600 text-sm">
+                </div>
+
+                <!-- Menu Makan Malam -->
+                <div>
+                  <label class="block text-xs font-semibold mb-1 text-stone-600">Menu Makan Malam</label>
+                  <select name="Menu_Pilihan" required 
+                          class="w-full px-3 py-2 border border-stone-300 rounded-md bg-white focus:outline-none focus:border-amber-600 text-sm">
+                    <option value="" disabled selected>Pilih Menu</option>
+                    <option value="Sapi Lada Hitam">Sapi Lada Hitam</option>
+                    <option value="Ayam Bakar Madu">Ayam Bakar Madu</option>
+                    <option value="Vegetarian Menu">Vegetarian Menu</option>
+                  </select>
+                </div>
+
+                <!-- Custom Form Question -->
+                <div>
+                  <label class="block text-xs font-semibold mb-1 text-stone-600">Mau custom form seperti diatas?</label>
+                  <select name="Ingin_Custom" required 
+                          class="w-full px-3 py-2 border border-stone-300 rounded-md bg-white focus:outline-none focus:border-amber-600 text-sm">
+                    <option value="" disabled selected>Pilih Jawaban</option>
+                    <option value="Ya, Tertarik">Ya, Tertarik</option>
+                    <option value="Tidak">Tidak</option>
+                  </select>
+                </div>
+
+                <!-- Tombol Kirim -->
+                <div class="pt-2">
+                  <button type="submit" 
+                          class="w-full bg-amber-700 hover:bg-amber-800 text-white font-semibold py-2.5 px-4 rounded-md transition-colors duration-200 text-sm">
+                    Kirim
+                  </button>
+                </div>
+
+              </form>
             </div>
-        </div>
 
-    </div>
-</section>
+            <!-- FOOTER UNDANGAN -->
+            <div class="mt-16 text-stone-500 text-xs tracking-wider">
+                <p class="font-light">Terima Kasih Atas Doa & Restu Anda</p>
+                <h4 class="font-aesthetic text-2xl text-amber-800 mt-2">Romeo & Juliet</h4>
+                <div class="mt-8 border-t border-stone-300 pt-4 text-[10px] text-stone-400">
+                    Created with ♥ by Namabrandmu
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- JAVASCRIPT LOGIK UNTUK MUSIK & ANIMASI COVER -->
     <script>
