@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Undangan Pernikahan - Romeo & Juliet</title>
-    <!-- Menggunakan Tailwind CSS untuk desain cepat & modern -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts untuk font tulisan estetis -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;600&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
-
-    <style>
-        .font-aesthetic { font-family: 'Great Vibes', cursive; }
-        .font-utama { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .font-serif-classic { font-family: 'Cinzel', serif; }
-
-        /* Animasi khusus untuk gerakan foto lambat sinematik */
-        @keyframes kenBurns {
-            0% { transform: scale(1) translate(0px, 0px); }
-            50% { transform: scale(1.15) translate(-10px, -5px); }
-            100% { transform: scale(1) translate(0px, 0px); }
-        }
-        .bg-bergerak {
-            animation: kenBurns 20s ease-in-out infinite;
-        }
-    </style>
-</head>
-<body class="bg-stone-200 antialiased text-stone-800 flex justify-center items-start min-h-screen font-utama">
+<body class="bg-stone-200 antialiased text-stone-800 font-utama min-h-screen relative overflow-x-hidden">
 
     <!-- FILE AUDIO / MUSIK BACKGROUND -->
     <audio id="bg-musik" loop>
@@ -35,16 +6,16 @@
         Browser kamu tidak mendukung pemutar audio.
     </audio>
 
-    <!-- HALAMAN COVER UTAMA (FULL SCREEN BERGAYA ADAT MODERN) -->
-    <div id="halaman-cover" class="fixed inset-0 z-50 flex flex-col items-center justify-center text-center transition-all duration-1000 ease-in-out overflow-hidden">
+    <!-- 1. HALAMAN COVER UTAMA (FULL SCREEN) -->
+    <div id="halaman-cover" class="fixed inset-0 z-50 flex flex-col items-center justify-center text-center transition-all duration-1000 ease-in-out w-full h-full bg-stone-900">
         
-        <!-- ELEMENT FOTO LATAR BELAKANG (DENGAN EFEK FADE TRANSISI & KEN BURNS) -->
+        <!-- Element Foto Latar Belakang -->
         <div id="slideshow-bg" class="absolute inset-0 z-0 bg-cover bg-center bg-bergerak transition-all duration-1000 ease-in-out" style="background-image: url('bg.jpg');"></div>
         
-        <!-- Lapisan Gelap Otomatis agar Tulisan Tetap Terbaca Kontras -->
-        <div class="absolute inset-0 z-0 bg-black/45"></div>
+        <!-- Lapisan Gelap Otomatis agar Tulisan Tetap Kontras -->
+        <div class="absolute inset-0 z-0 bg-black/50"></div>
         
-        <!-- Ornamen Sudut Kiri Bawah (SVG murni internal) -->
+        <!-- Ornamen Sudut Kiri Bawah -->
         <div class="absolute bottom-0 left-0 w-28 md:w-40 pointer-events-none z-10 text-amber-500 opacity-80 p-2">
             <svg viewBox="0 0 100 100" class="w-full h-full fill-current">
                 <path d="M0,100 L0,60 Q20,60 30,70 Q40,80 40,100 Z M0,100 L0,80 Q10,80 15,85 Q20,90 20,100 Z M0,100 L0,30 C10,40 30,40 40,50 C50,60 50,80 70,100 Z"/>
@@ -53,7 +24,7 @@
             </svg>
         </div>
         
-        <!-- Ornamen Sudut Kanan Bawah (SVG murni internal - Dibalik) -->
+        <!-- Ornamen Sudut Kanan Bawah -->
         <div class="absolute bottom-0 right-0 w-28 md:w-40 pointer-events-none z-10 text-amber-500 opacity-80 p-2 scale-x-[-1]">
             <svg viewBox="0 0 100 100" class="w-full h-full fill-current">
                 <path d="M0,100 L0,60 Q20,60 30,70 Q40,80 40,100 Z M0,100 L0,80 Q10,80 15,85 Q20,90 20,100 Z M0,100 L0,30 C10,40 30,40 40,50 C50,60 50,80 70,100 Z"/>
@@ -65,20 +36,20 @@
         <!-- Konten Text & Logo Tengah -->
         <div class="text-white px-4 flex flex-col items-center z-20 max-w-sm mx-auto relative">
             
-            <!-- Logo Gunungan Wayang Manual -->
-            <img src="gunungan.jpg" alt="Gunungan Wayang" class="w-24 h-32 object-contain mb-4 drop-shadow-lg">
+            <!-- Logo Gunungan Wayang -->
+            <img src="gunungan.jpg" alt="Gunungan Wayang" class="w-24 h-32 object-contain mb-4 drop-shadow-lg bg-white/90 p-1 rounded-md">
 
             <!-- Subtitle -->
-            <p class="font-serif-classic text-sm tracking-widest font-medium text-stone-200 uppercase leading-snug">
-                We Invited You To<br><span class="text-xs tracking-widest opacity-85 font-sans">THE WEDDING OF</span>
+            <p class="font-serif-classic text-xs tracking-widest font-medium text-stone-200 uppercase leading-snug">
+                We Invited You To<br><span class="text-[10px] tracking-widest opacity-85 font-sans">THE WEDDING OF</span>
             </p>
             
-            <!-- Nama Mempelai Besar Oranye/Emas -->
-            <h1 class="font-aesthetic text-5xl md:text-6xl my-3 text-orange-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
+            <!-- Nama Mempelai -->
+            <h1 class="font-aesthetic text-5xl md:text-6xl my-4 text-orange-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                 Romeo & Juliet
             </h1>
             
-            <!-- Divider Estetik Tengah -->
+            <!-- Divider Estetik -->
             <div class="w-44 h-4 text-amber-400 opacity-80 my-2">
                 <svg viewBox="0 0 200 20" class="w-full h-full fill-current">
                     <path d="M100,10 C90,0 80,20 70,10 C60,0 40,10 10,10 L10,11 C40,11 60,1 70,11 C80,21 90,1 100,10 Z"/>
@@ -90,17 +61,17 @@
             </div>
             
             <!-- Tombol Buka Undangan -->
-            <button onclick="bukaUndangan()" class="mt-6 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out tracking-wider text-xs uppercase">
+            <button onclick="bukaUndangan()" class="mt-6 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out tracking-wider text-xs uppercase z-30">
                 ✉ Buka Undangan
             </button>
         </div>
     </div>
 
-    <!-- KONTAINER UTAMA SEUKURAN HP (MEMBUAT TAMPILAN PRESISI DI MOBILE) -->
-    <div id="body-konten" class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-x-hidden block">
+    <!-- 2. KONTAINER UTAMA ISI UNDANGAN (DIBUAT HIDDEN & MAX-W-MD AGAR RAPI DI HP) -->
+    <div id="body-konten" class="hidden opacity-0 transition-opacity duration-1000 mx-auto max-w-md bg-white min-h-screen shadow-2xl relative z-10">
         
-        <!-- ISI UTAMA UNDANGAN (PROFIL MEMPELAI) -->
-        <main class="py-16 px-6 flex flex-col items-center justify-center text-center">
+        <!-- ISI UTAMA UNDANGAN -->
+        <main class="py-16 px-6 flex flex-col items-center text-center">
         
             <!-- Ucapan Pembuka / Ayat -->
             <div class="mb-12 w-full">
@@ -113,8 +84,8 @@
 
             <!-- PROFIL MEMPELAI WANITA -->
             <div class="flex flex-col items-center mb-10 w-full">
-                <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-200 shadow-md mb-4 bg-stone-300 flex items-center justify-center">
-                    <img src="wanita.jpg" alt="Foto Wanita" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x150?text=Foto+Wanita'">
+                <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-200 shadow-md mb-4 bg-stone-300">
+                    <img src="wanita.jpg" alt="Foto Wanita" class="w-full h-full object-cover">
                 </div>
                 <h3 class="font-aesthetic text-3xl text-amber-800 font-medium">Juliet Capulet</h3>
                 <p class="text-xs text-stone-500 font-semibold mt-1">Putri dari Pasangan</p>
@@ -126,8 +97,8 @@
 
             <!-- PROFIL MEMPELAI PRIA -->
             <div class="flex flex-col items-center mb-6 w-full">
-                <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-200 shadow-md mb-4 bg-stone-300 flex items-center justify-center">
-                    <img src="pria.jpg" alt="Foto Pria" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x150?text=Foto+Pria'">
+                <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-200 shadow-md mb-4 bg-stone-300">
+                    <img src="pria.jpg" alt="Foto Pria" class="w-full h-full object-cover">
                 </div>
                 <h3 class="font-aesthetic text-3xl text-amber-800 font-medium">Romeo Montague</h3>
                 <p class="text-xs text-stone-500 font-semibold mt-1">Putra dari Pasangan</p>
@@ -142,7 +113,7 @@
             <h2 class="font-aesthetic text-4xl text-stone-800 mb-10">Pelaksanaan Acara</h2>
 
             <!-- KARTU AKAD NIKAH -->
-            <div class="bg-white rounded-2xl shadow-sm p-6 mb-6 border border-stone-200 transform transition duration-300 hover:shadow-md text-center">
+            <div class="bg-white rounded-2xl shadow-sm p-6 mb-6 border border-stone-200 text-center">
                 <div class="text-amber-600 text-2xl mb-2">💍</div>
                 <h3 class="font-aesthetic text-3xl text-stone-800 mb-3">Akad Nikah</h3>
                 <hr class="w-16 mx-auto border-amber-200 mb-4">
@@ -155,7 +126,7 @@
             </div>
 
             <!-- KARTU RESEPSI NIKAH -->
-            <div class="bg-white rounded-2xl shadow-sm p-6 mb-10 border border-stone-200 transform transition duration-300 hover:shadow-md text-center">
+            <div class="bg-white rounded-2xl shadow-sm p-6 mb-10 border border-stone-200 text-center">
                 <div class="text-amber-600 text-2xl mb-2">🥂</div>
                 <h3 class="font-aesthetic text-3xl text-stone-800 mb-3">Resepsi</h3>
                 <hr class="w-16 mx-auto border-amber-200 mb-4">
@@ -168,7 +139,7 @@
             </div>
 
             <!-- TOMBOL GOOGLE MAPS -->
-            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center bg-stone-800 hover:bg-stone-900 text-white font-medium text-sm py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out tracking-wide mx-auto">
+            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center bg-stone-800 hover:bg-stone-900 text-white font-medium text-sm py-3 px-6 rounded-full shadow-md tracking-wide mx-auto">
                 📍 Buka Peta Lokasi (Google Maps)
             </a>
         </section>
@@ -177,9 +148,6 @@
         <section class="bg-stone-100 py-16 px-6 w-full text-center">
             <p class="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-2">Konfirmasi Kehadiran</p>
             <h2 class="font-aesthetic text-4xl text-stone-800 mb-6">RSVP & Ucapan</h2>
-            <p class="text-stone-600 text-xs leading-relaxed max-w-xs mx-auto mb-8">
-                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
-            </p>
 
             <!-- FORM KEHADIRAN KUSTOM -->
             <div class="bg-white rounded-2xl shadow-md p-6 border border-stone-200 w-full max-w-sm mx-auto text-left">
@@ -188,15 +156,15 @@
                 <form action="https://formspree.io/f/mykrknjo" method="POST" class="space-y-4 text-stone-700">
                     <div>
                         <label class="block text-xs font-semibold mb-1 text-stone-600">Nama</label>
-                        <input type="text" name="Nama" required placeholder="Contoh: Bapak Budi" class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-amber-600 text-sm bg-white">
+                        <input type="text" name="Nama" required placeholder="Contoh: Bapak Budi" class="w-full px-3 py-2 border border-stone-300 rounded-md text-sm bg-white">
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1 text-stone-600">Ucapan</label>
-                        <textarea name="Ucapan" rows="4" required placeholder="Tulis ucapan & doa restu di sini..." class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-amber-600 text-sm resize-none bg-white"></textarea>
+                        <textarea name="Ucapan" rows="4" required placeholder="Tulis ucapan & doa restu di sini..." class="w-full px-3 py-2 border border-stone-300 rounded-md text-sm resize-none bg-white"></textarea>
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1 text-stone-600">Kehadiran</label>
-                        <select name="Kehadiran" required class="w-full px-3 py-2 border border-stone-300 rounded-md bg-white focus:outline-none focus:border-amber-600 text-sm">
+                        <select name="Kehadiran" required class="w-full px-3 py-2 border border-stone-300 rounded-md bg-white text-sm">
                             <option value="" disabled selected>Pilih Kehadiran</option>
                             <option value="Ya, Saya Akan Hadir">Ya, Saya Akan Hadir</option>
                             <option value="Maaf, Saya Tidak Dapat Hadir">Maaf, Saya Tidak Dapat Hadir</option>
@@ -204,10 +172,10 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold mb-1 text-stone-600">Dateng Sama Siapa?</label>
-                        <input type="text" name="Teman_Kondangan" placeholder="Contoh: Istri / Teman Kantor" class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-amber-600 text-sm bg-white">
+                        <input type="text" name="Teman_Kondangan" placeholder="Contoh: Istri / Teman Kantor" class="w-full px-3 py-2 border border-stone-300 rounded-md text-sm bg-white">
                     </div>
                     <div class="pt-2">
-                        <button type="submit" class="w-full bg-amber-700 hover:bg-amber-800 text-white font-semibold py-2.5 px-4 rounded-md transition-colors duration-200 text-sm">
+                        <button type="submit" class="w-full bg-amber-700 hover:bg-amber-800 text-white font-semibold py-2.5 px-4 rounded-md text-sm">
                             Kirim
                         </button>
                     </div>
@@ -228,45 +196,51 @@
 
     <!-- JAVASCRIPT LOGIK UNTUK MUSIK & SLIDESHOW BACKGROUND -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.body.classList.add('overflow-hidden');
-            mulaiSlideshow(); // Jalankan slideshow saat web dibuka
-        });
-
-        // --- SISTEM SLIDESHOW LATAR BELAKANG ---
-        // Kamu bisa menambah atau mengubah nama file gambar di dalam tanda kurung siku [] ini
         const daftarGambar = ['bg.jpg', 'bg2.jpg', 'bg3.jpg']; 
         let indeksSekarang = 0;
-        const elemenBg = document.getElementById('slideshow-bg');
+        let elemenBg;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            elemenBg = document.getElementById('slideshow-bg');
+            mulaiSlideshow();
+        });
 
         function mulaiSlideshow() {
             setInterval(() => {
-                // Efek fade-out sedikit sebelum ganti gambar
-                elemenBg.style.opacity = '0.4';
+                if(!elemenBg) return;
+                elemenBg.style.opacity = '0.3';
                 
                 setTimeout(() => {
-                    // Ganti ke foto berikutnya
                     indeksSekarang = (indeksSekarang + 1) % daftarGambar.length;
                     elemenBg.style.backgroundImage = `url('${daftarGambar[indeksSekarang]}')`;
-                    
-                    // Kembalikan opacity menjadi penuh (fade-in)
                     elemenBg.style.opacity = '1';
-                }, 1000); // Waktu transisi fade (1 detik)
+                }, 1000);
 
-            }, 6000); // Foto akan berganti otomatis setiap 6 detik
+            }, 5000);
         }
 
-        // --- TOMBOL BUKA UNDANGAN ---
         function bukaUndangan() {
+            // Jalankan Musik
             const musik = document.getElementById('bg-musik');
             musik.play().catch(error => {
-                console.log("Autoplay musik diblokir browser.");
+                console.log("Autoplay musik diblokir.");
             });
 
             const cover = document.getElementById('halaman-cover');
+            const isiKonten = document.getElementById('body-konten');
+            
+            // 1. Munculkan struktur konten utama terlebih dahulu
+            isiKonten.classList.remove('hidden');
+            
+            // 2. Beri jeda mikro untuk animasi transisi fade-in agar mulus
+            setTimeout(() => {
+                isiKonten.classList.add('opacity-100');
+            }, 50);
+            
+            // 3. Slide cover utama ke atas dan hilangkan
             cover.classList.add('-translate-y-full', 'opacity-0');
             
-            document.body.classList.remove('overflow-hidden');
+            // 4. Hapus total element cover dari DOM setelah animasi selesai (1 detik)
             setTimeout(() => {
                 cover.style.display = 'none';
             }, 1000);
