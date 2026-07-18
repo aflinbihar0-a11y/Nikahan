@@ -28,33 +28,53 @@
     <!-- HALAMAN COVER UTAMA (FULL SCREEN BERGAYA ADAT MODERN) -->
     <div id="halaman-cover" class="fixed inset-0 z-50 flex flex-col items-center justify-center text-center bg-cover bg-center transition-all duration-1000 ease-in-out overflow-hidden" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('bg.jpg');">
         
-        <!-- Ornamen Sudut Kiri Bawah -->
-        <img src="https://i.ibb.co/3mbyfFm/corner-gold.png" alt="Ornamen Kiri" class="absolute bottom-0 left-0 w-32 md:w-44 object-contain pointer-events-none z-10" onerror="this.src='https://svgshare.com/i/15Vz.svg'">
+        <!-- Ornamen Sudut Kiri Bawah (Menggunakan SVG murni internal agar tidak pecah) -->
+        <div class="absolute bottom-0 left-0 w-28 md:w-40 pointer-events-none z-10 text-amber-500 opacity-80 p-2">
+            <svg viewBox="0 0 100 100" class="w-full h-full fill-current">
+                <path d="M0,100 L0,60 Q20,60 30,70 Q40,80 40,100 Z M0,100 L0,80 Q10,80 15,85 Q20,90 20,100 Z M0,100 L0,30 C10,40 30,40 40,50 C50,60 50,80 70,100 Z"/>
+                <circle cx="15" cy="85" r="2"/>
+                <circle cx="30" cy="70" r="3"/>
+            </svg>
+        </div>
         
-        <!-- Ornamen Sudut Kanan Bawah (Dibalik secara Horizontal) -->
-        <img src="https://i.ibb.co/3mbyfFm/corner-gold.png" alt="Ornamen Kanan" class="absolute bottom-0 right-0 w-32 md:w-44 object-contain pointer-events-none z-10 scale-x-[-1]" onerror="this.src='https://svgshare.com/i/15Vz.svg'">
+        <!-- Ornamen Sudut Kanan Bawah (Menggunakan SVG murni internal - Dibalik) -->
+        <div class="absolute bottom-0 right-0 w-28 md:w-40 pointer-events-none z-10 text-amber-500 opacity-80 p-2 scale-x-[-1]">
+            <svg viewBox="0 0 100 100" class="w-full h-full fill-current">
+                <path d="M0,100 L0,60 Q20,60 30,70 Q40,80 40,100 Z M0,100 L0,80 Q10,80 15,85 Q20,90 20,100 Z M0,100 L0,30 C10,40 30,40 40,50 C50,60 50,80 70,100 Z"/>
+                <circle cx="15" cy="85" r="2"/>
+                <circle cx="30" cy="70" r="3"/>
+            </svg>
+        </div>
 
         <!-- Konten Text & Logo Tengah -->
         <div class="text-white px-4 flex flex-col items-center z-20 max-w-sm mx-auto">
             
-            <!-- Logo Gunungan Wayang Putih -->
+            <!-- Logo Gunungan Wayang Manual (Memanggil file gunungan.jpg dari GitHub kamu) -->
             <img src="gunungan.jpg" alt="Gunungan Wayang" class="w-24 h-32 object-contain mb-4 drop-shadow-lg">
 
             <!-- Subtitle -->
-            <p class="font-serif-classic text-sm md:text-base tracking-wider font-medium text-stone-100 uppercase leading-snug">
-                We Invited You To<br><span class="text-xs tracking-widest opacity-90">The Wedding Of</span>
+            <p class="font-serif-classic text-sm tracking-widest font-medium text-stone-200 uppercase leading-snug">
+                We Invited You To<br><span class="text-xs tracking-widest opacity-85 font-sans">THE WEDDING OF</span>
             </p>
             
             <!-- Nama Mempelai Besar Oranye/Emas -->
-            <h1 class="font-aesthetic text-5xl md:text-6xl my-4 text-orange-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+            <h1 class="font-aesthetic text-5xl md:text-6xl my-3 text-orange-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)]">
                 Romeo & Juliet
             </h1>
             
-            <!-- Garis Pembatas Estetik di Bawah Nama -->
-            <img src="https://svgshare.com/i/15W8.svg" alt="Divider" class="w-40 object-contain my-2 opacity-80 filter brightness-125">
+            <!-- Divider Estetik Tengah (Menggunakan SVG murni internal agar tidak pecah) -->
+            <div class="w-44 h-4 text-amber-400 opacity-80 my-2">
+                <svg viewBox="0 0 200 20" class="w-full h-full fill-current">
+                    <path d="M100,10 C90,0 80,20 70,10 C60,0 40,10 10,10 L10,11 C40,11 60,1 70,11 C80,21 90,1 100,10 Z"/>
+                    <path d="M100,10 C110,0 120,20 130,10 C140,0 160,10 190,10 L190,11 C160,11 140,1 130,11 C120,21 110,1 100,10 Z"/>
+                    <circle cx="100" cy="10" r="3"/>
+                    <circle cx="85" cy="10" r="1.5"/>
+                    <circle cx="115" cy="10" r="1.5"/>
+                </svg>
+            </div>
             
             <!-- Tombol Buka Undangan -->
-            <button onclick="bukaUndangan()" class="mt-8 bg-amber-600 hover:bg-amber-700 text-white font-medium py-2.5 px-6 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out tracking-wide text-xs uppercase">
+            <button onclick="bukaUndangan()" class="mt-6 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out tracking-wider text-xs uppercase">
                 ✉ Buka Undangan
             </button>
         </div>
