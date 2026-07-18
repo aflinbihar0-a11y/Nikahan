@@ -96,134 +96,148 @@
         </div>
     </div>
 
-    <!-- KONTAINER UTAMA SEUKURAN HP (DIUBAH MENJADI HIDDEN DI AWAL AGAR TIDAK TEMBUS) -->
-    <div id="body-konten" class="hidden w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-x-hidden z-10">
+    <!-- KONTAINER UTAMA SEUKURAN HP DENGAN BACKGROUND VIDEO MP4 -->
+    <div id="body-konten" class="hidden w-full max-w-md min-h-screen shadow-2xl relative overflow-x-hidden z-10 bg-stone-900">
         
-        <!-- ISI UTAMA UNDANGAN (PROFIL MEMPELAI) -->
-        <main class="py-16 px-6 flex flex-col items-center justify-center text-center">
+        <!-- ELEMENT VIDEO MP4 SEBAGAI BACKGROUND -->
+        <!-- video akan otomatis berputar (autoplay), tanpa suara (muted), dan mengulang terus (loop) -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-40">
+            <source src="background.mp4" type="video/mp4">
+            Browser kamu tidak mendukung video latar belakang.
+        </video>
+
+        <!-- LAPISAN LAYER TRANSPARAN (Agar tulisan di atas video tetap tajam & mudah dibaca) -->
+        <div class="absolute inset-0 bg-gradient-to-b from-stone-900/60 via-stone-950/40 to-stone-900/70 z-0"></div>
         
-            <!-- Ucapan Pembuka / Ayat -->
-            <div class="mb-12 w-full">
-                <p class="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-3">Selamat Datang</p>
-                <h2 class="font-aesthetic text-4xl text-stone-800 mb-4">Assalamu'alaikum Wr. Wb.</h2>
-                <p class="text-stone-600 text-xs leading-relaxed italic px-2">
-                    "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."
-                </p>
-            </div>
+        <!-- KONTEN UTAMA DIATAS VIDEO (Diberi class z-10 dan text-white agar kontras dengan video gelap) -->
+        <div class="relative z-10 text-white">
 
-            <!-- PROFIL MEMPELAI WANITA -->
-            <div class="flex flex-col items-center mb-10 w-full">
-                <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-200 shadow-md mb-4 bg-stone-300 flex items-center justify-center">
-                    <img src="wanita.jpg" alt="Foto Wanita" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x150?text=Foto+Wanita'">
+            <!-- ISI UTAMA UNDANGAN (PROFIL MEMPELAI) -->
+            <main class="py-16 px-6 flex flex-col items-center justify-center text-center">
+            
+                <!-- Ucapan Pembuka / Ayat -->
+                <div class="mb-12 w-full">
+                    <p class="text-xs uppercase tracking-widest text-amber-400 font-semibold mb-3">Selamat Datang</p>
+                    <h2 class="font-aesthetic text-4xl text-stone-100 mb-4">Assalamu'alaikum Wr. Wb.</h2>
+                    <p class="text-stone-300 text-xs leading-relaxed italic px-2 opacity-90">
+                        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya."
+                    </p>
                 </div>
-                <h3 class="font-aesthetic text-3xl text-amber-800 font-medium">Juliet Capulet</h3>
-                <p class="text-xs text-stone-500 font-semibold mt-1">Putri dari Pasangan</p>
-                <p class="text-sm text-stone-700">Bapak Capulet & Ibu Capulet</p>
-            </div>
 
-            <!-- Simbol Dan (&) -->
-            <div class="font-aesthetic text-4xl text-amber-600 my-4">&</div>
-
-            <!-- PROFIL MEMPELAI PRIA -->
-            <div class="flex flex-col items-center mb-6 w-full">
-                <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-200 shadow-md mb-4 bg-stone-300 flex items-center justify-center">
-                    <img src="pria.jpg" alt="Foto Pria" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x150?text=Foto+Pria'">
+                <!-- PROFIL MEMPELAI WANITA -->
+                <div class="flex flex-col items-center mb-10 w-full">
+                    <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-400/60 shadow-xl mb-4 bg-stone-800 flex items-center justify-center">
+                        <img src="wanita.jpg" alt="Foto Wanita" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x150?text=Foto+Wanita'">
+                    </div>
+                    <h3 class="font-aesthetic text-3xl text-amber-400 font-medium">Juliet Capulet</h3>
+                    <p class="text-xs text-stone-300 font-semibold mt-1 opacity-80">Putri dari Pasangan</p>
+                    <p class="text-sm text-stone-200">Bapak Capulet & Ibu Capulet</p>
                 </div>
-                <h3 class="font-aesthetic text-3xl text-amber-800 font-medium">Romeo Montague</h3>
-                <p class="text-xs text-stone-500 font-semibold mt-1">Putra dari Pasangan</p>
-                <p class="text-sm text-stone-700">Bapak Montague & Ibu Montague</p>
-            </div>
 
-        </main>
+                <!-- Simbol Dan (&) -->
+                <div class="font-aesthetic text-4xl text-amber-400 my-4">&</div>
 
-        <!-- SECTION DETAIL ACARA -->
-        <section class="bg-stone-50 py-16 px-6 w-full text-center border-t border-b border-stone-200">
-            <p class="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-2">Informasi Acara</p>
-            <h2 class="font-aesthetic text-4xl text-stone-800 mb-10">Pelaksanaan Acara</h2>
-
-            <!-- KARTU AKAD NIKAH -->
-            <div class="bg-white rounded-2xl shadow-sm p-6 mb-6 border border-stone-200 transform transition duration-300 hover:shadow-md text-center">
-                <div class="text-amber-600 text-2xl mb-2">💍</div>
-                <h3 class="font-aesthetic text-3xl text-stone-800 mb-3">Akad Nikah</h3>
-                <hr class="w-16 mx-auto border-amber-200 mb-4">
-                <p class="text-sm font-semibold text-stone-700">Sabtu, 12 Desember 2026</p>
-                <p class="text-xs text-stone-500 mt-1">Pukul 08.00 - 10.00 WIB</p>
-                <p class="text-xs text-stone-600 mt-4 font-medium">Lokasi Utama:</p>
-                <p class="text-xs text-stone-500 max-w-xs mx-auto mt-1">
-                    Masjid Agung Kota Indah, Jl. Melati No. 45, Kecamatan Asri, Kota Bahagia
-                </p>
-            </div>
-
-            <!-- KARTU RESEPSI NIKAH -->
-            <div class="bg-white rounded-2xl shadow-sm p-6 mb-10 border border-stone-200 transform transition duration-300 hover:shadow-md text-center">
-                <div class="text-amber-600 text-2xl mb-2">🥂</div>
-                <h3 class="font-aesthetic text-3xl text-stone-800 mb-3">Resepsi</h3>
-                <hr class="w-16 mx-auto border-amber-200 mb-4">
-                <p class="text-sm font-semibold text-stone-700">Sabtu, 12 Desember 2026</p>
-                <p class="text-xs text-stone-500 mt-1">Pukul 11.00 - Selesai</p>
-                <p class="text-xs text-stone-600 mt-4 font-medium">Lokasi Utama:</p>
-                <p class="text-xs text-stone-500 max-w-xs mx-auto mt-1">
-                    Gedung Serbaguna Kencana, Jl. Mawar No. 12, Kota Bahagia
-                </p>
-            </div>
-
-            <!-- TOMBOL GOOGLE MAPS -->
-            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center bg-stone-800 hover:bg-stone-900 text-white font-medium text-sm py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out tracking-wide mx-auto">
-                📍 Buka Peta Lokasi (Google Maps)
-            </a>
-        </section>
-
-        <!-- SECTION RSVP & UCAPAN DIGITAL -->
-        <section class="bg-stone-100 py-16 px-6 w-full text-center">
-            <p class="text-xs uppercase tracking-widest text-amber-700 font-semibold mb-2">Konfirmasi Kehadiran</p>
-            <h2 class="font-aesthetic text-4xl text-stone-800 mb-6">RSVP & Ucapan</h2>
-            <p class="text-stone-600 text-xs leading-relaxed max-w-xs mx-auto mb-8">
-                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
-            </p>
-
-            <!-- FORM KEHADIRAN KUSTOM -->
-            <div class="bg-white rounded-2xl shadow-md p-6 border border-stone-200 w-full max-w-sm mx-auto text-left">
-                <h3 class="text-center font-aesthetic text-3xl text-amber-800 font-medium mb-6">Kehadiran</h3>
-
-                <form action="https://formspree.io/f/mykrknjo" method="POST" class="space-y-4 text-stone-700">
-                    <div>
-                        <label class="block text-xs font-semibold mb-1 text-stone-600">Nama</label>
-                        <input type="text" name="Nama" required placeholder="Contoh: Bapak Budi" class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-amber-600 text-sm bg-white">
+                <!-- PROFIL MEMPELAI PRIA -->
+                <div class="flex flex-col items-center mb-6 w-full">
+                    <div class="w-36 h-36 rounded-full overflow-hidden border-4 border-amber-400/60 shadow-xl mb-4 bg-stone-800 flex items-center justify-center">
+                        <img src="pria.jpg" alt="Foto Pria" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150x150?text=Foto+Pria'">
                     </div>
-                    <div>
-                        <label class="block text-xs font-semibold mb-1 text-stone-600">Ucapan</label>
-                        <textarea name="Ucapan" rows="4" required placeholder="Tulis ucapan & doa restu di sini..." class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-amber-600 text-sm resize-none bg-white"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold mb-1 text-stone-600">Kehadiran</label>
-                        <select name="Kehadiran" required class="w-full px-3 py-2 border border-stone-300 rounded-md bg-white focus:outline-none focus:border-amber-600 text-sm">
-                            <option value="" disabled selected>Pilih Kehadiran</option>
-                            <option value="Ya, Saya Akan Hadir">Ya, Saya Akan Hadir</option>
-                            <option value="Maaf, Saya Tidak Dapat Hadir">Maaf, Saya Tidak Dapat Hadir</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold mb-1 text-stone-600">Dateng Sama Siapa?</label>
-                        <input type="text" name="Teman_Kondangan" placeholder="Contoh: Istri / Teman Kantor" class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-amber-600 text-sm bg-white">
-                    </div>
-                    <div class="pt-2">
-                        <button type="submit" class="w-full bg-amber-700 hover:bg-amber-800 text-white font-semibold py-2.5 px-4 rounded-md transition-colors duration-200 text-sm">
-                            Kirim
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- FOOTER UNDANGAN -->
-            <div class="mt-16 text-stone-500 text-xs tracking-wider">
-                <p class="font-light">Terima Kasih Atas Doa & Restu Anda</p>
-                <h4 class="font-aesthetic text-2xl text-amber-800 mt-2">Romeo & Juliet</h4>
-                <div class="mt-8 border-t border-stone-300 pt-4 text-[10px] text-stone-400">
-                    Created with ♥ by GrowTrack.ID
+                    <h3 class="font-aesthetic text-3xl text-amber-400 font-medium">Romeo Montague</h3>
+                    <p class="text-xs text-stone-300 font-semibold mt-1 opacity-80">Putra dari Pasangan</p>
+                    <p class="text-sm text-stone-200">Bapak Montague & Ibu Montague</p>
                 </div>
-            </div>
-        </section>
 
+            </main>
+
+            <!-- SECTION DETAIL ACARA -->
+            <section class="bg-black/20 py-16 px-6 w-full text-center border-t border-b border-white/10 backdrop-blur-sm">
+                <p class="text-xs uppercase tracking-widest text-amber-400 font-semibold mb-2">Informasi Acara</p>
+                <h2 class="font-aesthetic text-4xl text-stone-100 mb-10">Pelaksanaan Acara</h2>
+
+                <!-- KARTU AKAD NIKAH -->
+                <div class="bg-stone-900/80 backdrop-blur-md rounded-2xl shadow-lg p-6 mb-6 border border-white/10 text-center">
+                    <div class="text-amber-400 text-2xl mb-2">💍</div>
+                    <h3 class="font-aesthetic text-3xl text-stone-200 mb-3">Akad Nikah</h3>
+                    <hr class="w-16 mx-auto border-amber-400/40 mb-4">
+                    <p class="text-sm font-semibold text-stone-100">Sabtu, 12 Desember 2026</p>
+                    <p class="text-xs text-stone-300 mt-1">Pukul 08.00 - 10.00 WIB</p>
+                    <p class="text-xs text-amber-400 mt-4 font-medium">Lokasi Utama:</p>
+                    <p class="text-xs text-stone-300 max-w-xs mx-auto mt-1 opacity-90">
+                        Masjid Agung Kota Indah, Jl. Melati No. 45, Kecamatan Asri, Kota Bahagia
+                    </p>
+                </div>
+
+                <!-- KARTU RESEPSI NIKAH -->
+                <div class="bg-stone-900/80 backdrop-blur-md rounded-2xl shadow-lg p-6 mb-10 border border-white/10 text-center">
+                    <div class="text-amber-400 text-2xl mb-2">🥂</div>
+                    <h3 class="font-aesthetic text-3xl text-stone-200 mb-3">Resepsi</h3>
+                    <hr class="w-16 mx-auto border-amber-400/40 mb-4">
+                    <p class="text-sm font-semibold text-stone-100">Sabtu, 12 Desember 2026</p>
+                    <p class="text-xs text-stone-300 mt-1">Pukul 11.00 - Selesai</p>
+                    <p class="text-xs text-amber-400 mt-4 font-medium">Lokasi Utama:</p>
+                    <p class="text-xs text-stone-300 max-w-xs mx-auto mt-1 opacity-90">
+                        Gedung Serbaguna Kencana, Jl. Mawar No. 12, Kota Bahagia
+                    </p>
+                </div>
+
+                <!-- TOMBOL GOOGLE MAPS -->
+                <a href="https://maps.google.com" target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-700 text-white font-medium text-sm py-3 px-6 rounded-full shadow-md transition duration-300 ease-in-out tracking-wide mx-auto">
+                    📍 Buka Peta Lokasi (Google Maps)
+                </a>
+            </section>
+
+            <!-- SECTION RSVP & UCAPAN DIGITAL -->
+            <section class="bg-black/10 py-16 px-6 w-full text-center backdrop-blur-sm">
+                <p class="text-xs uppercase tracking-widest text-amber-400 font-semibold mb-2">Konfirmasi Kehadiran</p>
+                <h2 class="font-aesthetic text-4xl text-stone-100 mb-6">RSVP & Ucapan</h2>
+                <p class="text-stone-300 text-xs leading-relaxed max-w-xs mx-auto mb-8 opacity-90">
+                    Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
+                </p>
+
+                <!-- FORM KEHADIRAN KUSTOM -->
+                <div class="bg-stone-900/90 backdrop-blur-md rounded-2xl shadow-xl p-6 border border-white/10 w-full max-w-sm mx-auto text-left">
+                    <h3 class="text-center font-aesthetic text-3xl text-amber-400 font-medium mb-6">Kehadiran</h3>
+
+                    <form action="https://formspree.io/f/mykrknjo" method="POST" class="space-y-4 text-stone-200">
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-stone-300">Nama</label>
+                            <input type="text" name="Nama" required placeholder="Contoh: Bapak Budi" class="w-full px-3 py-2 border border-white/20 rounded-md focus:outline-none focus:border-amber-400 text-sm bg-stone-800/80 text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-stone-300">Ucapan</label>
+                            <textarea name="Ucapan" rows="4" required placeholder="Tulis ucapan & doa restu di sini..." class="w-full px-3 py-2 border border-white/20 rounded-md focus:outline-none focus:border-amber-400 text-sm resize-none bg-stone-800/80 text-white"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-stone-300">Kehadiran</label>
+                            <select name="Kehadiran" required class="w-full px-3 py-2 border border-white/20 rounded-md focus:outline-none focus:border-amber-400 text-sm bg-stone-800 text-white">
+                                <option value="" disabled selected class="bg-stone-900">Pilih Kehadiran</option>
+                                <option value="Ya, Saya Akan Hadir" class="bg-stone-900">Ya, Saya Akan Hadir</option>
+                                <option value="Maaf, Saya Tidak Dapat Hadir" class="bg-stone-900">Maaf, Saya Tidak Dapat Hadir</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold mb-1 text-stone-300">Dateng Sama Siapa?</label>
+                            <input type="text" name="Teman_Kondangan" placeholder="Contoh: Istri / Teman Kantor" class="w-full px-3 py-2 border border-white/20 rounded-md focus:outline-none focus:border-amber-400 text-sm bg-stone-800/80 text-white">
+                        </div>
+                        <div class="pt-2">
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 px-4 rounded-md transition-colors duration-200 text-sm shadow-md">
+                                Kirim
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- FOOTER UNDANGAN -->
+                <div class="mt-16 text-stone-400 text-xs tracking-wider">
+                    <p class="font-light">Terima Kasih Atas Doa & Restu Anda</p>
+                    <h4 class="font-aesthetic text-2xl text-amber-400 mt-2">Romeo & Juliet</h4>
+                    <div class="mt-8 border-t border-white/10 pt-4 text-[10px] text-stone-500">
+                        Created with ♥ by GrowTrack.ID
+                    </div>
+                </div>
+            </section>
+
+        </div>
     </div>
 
     <!-- JAVASCRIPT LOGIK UNTUK MUSIK & SLIDESHOW BACKGROUND -->
