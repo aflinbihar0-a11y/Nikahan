@@ -27,7 +27,7 @@
         }
     </style>
 </head>
-<body class="bg-stone-200 antialiased text-stone-800 flex justify-center items-start min-h-screen font-utama">
+<body class="bg-stone-200 antialiased text-stone-800 flex justify-center items-start min-h-screen font-utama relative">
 
     <!-- FILE AUDIO / MUSIK BACKGROUND -->
     <audio id="bg-musik" loop>
@@ -36,7 +36,7 @@
     </audio>
 
     <!-- HALAMAN COVER UTAMA (FULL SCREEN BERGAYA ADAT MODERN) -->
-    <div id="halaman-cover" class="fixed inset-0 z-50 flex flex-col items-center justify-center text-center transition-all duration-1000 ease-in-out overflow-hidden">
+    <div id="halaman-cover" class="fixed inset-0 z-50 flex flex-col items-center justify-center text-center transition-all duration-1000 ease-in-out overflow-hidden bg-stone-900">
         
         <!-- ELEMENT FOTO LATAR BELAKANG (DENGAN EFEK FADE TRANSISI & KEN BURNS) -->
         <div id="slideshow-bg" class="absolute inset-0 z-0 bg-cover bg-center bg-bergerak transition-all duration-1000 ease-in-out" style="background-image: url('bg.jpg');"></div>
@@ -96,8 +96,8 @@
         </div>
     </div>
 
-    <!-- KONTAINER UTAMA SEUKURAN HP (MEMBUAT TAMPILAN PRESISI DI MOBILE) -->
-    <div id="body-konten" class="w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-x-hidden block">
+    <!-- KONTAINER UTAMA SEUKURAN HP (DIUBAH MENJADI HIDDEN DI AWAL AGAR TIDAK TEMBUS) -->
+    <div id="body-konten" class="hidden w-full max-w-md bg-white min-h-screen shadow-2xl relative overflow-x-hidden z-10">
         
         <!-- ISI UTAMA UNDANGAN (PROFIL MEMPELAI) -->
         <main class="py-16 px-6 flex flex-col items-center justify-center text-center">
@@ -234,7 +234,6 @@
         });
 
         // --- SISTEM SLIDESHOW LATAR BELAKANG ---
-        // Kamu bisa menambah atau mengubah nama file gambar di dalam tanda kurung siku [] ini
         const daftarGambar = ['bg.jpg', 'bg2.jpg', 'bg3.jpg']; 
         let indeksSekarang = 0;
         const elemenBg = document.getElementById('slideshow-bg');
@@ -262,6 +261,10 @@
             musik.play().catch(error => {
                 console.log("Autoplay musik diblokir browser.");
             });
+
+            // Tampilkan isi konten terlebih dahulu tepat sebelum cover digeser keluar
+            const isiKonten = document.getElementById('body-konten');
+            isiKonten.classList.remove('hidden');
 
             const cover = document.getElementById('halaman-cover');
             cover.classList.add('-translate-y-full', 'opacity-0');
